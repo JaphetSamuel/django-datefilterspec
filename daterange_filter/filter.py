@@ -70,11 +70,11 @@ class DateRangeFilterBaseForm(forms.Form):
         except AttributeError:
             setattr(self.request, 'daterange_filter_media_included', True)
 
-            js = ["calendar.js", "admin/DateTimeShortcuts.js"]
+            js = ("calendar.js", "admin/DateTimeShortcuts.js")
             css = ['widgets.css']
 
             return forms.Media(
-                js=[static("admin/js/%s" % path) for path in js],
+                js=("calendar.js", "admin/DateTimeShortcuts.js"),
                 css={'all': [static("admin/css/%s" % path) for path in css]}
             )
 
